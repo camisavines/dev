@@ -1,111 +1,148 @@
+/* IBM Carbon Design System Integration & Portfolio Styling */
+@import '@carbon/styles/css/styles.css';
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  scroll-behavior: smooth;
+  --cds-motion-duration-fast-01: 70ms;
+  --cds-motion-duration-fast-02: 110ms;
+  --cds-motion-duration-moderate-01: 150ms;
+  --cds-motion-duration-moderate-02: 240ms;
+  --cds-motion-duration-slow-01: 400ms;
+  --cds-motion-duration-slow-02: 700ms;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
+html,
 body {
   margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--cds-background, #161616);
+  color: var(--cds-text-primary, #f4f4f4);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/* Accessibility Skip Link */
+.portfolio-skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--cds-interactive, #0f62fe);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.2s ease-in-out;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+.portfolio-skip-to-content:focus {
+  top: 0;
+  outline: 2px solid var(--cds-focus, #ffffff);
+  outline-offset: 2px;
+}
+
+/* Section Wrapper Standard Spacing */
+.portfolio-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid var(--cds-border-subtle, #393939);
+  position: relative;
+}
+
+@media (max-width: 672px) {
+  .portfolio-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+
+.portfolio-section-title-wrapper {
+  margin-bottom: 2.5rem;
 }
-p {
+
+.portfolio-section-eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cds-link-primary, #78a9ff);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.portfolio-section-heading {
+  font-size: 2.25rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--cds-text-primary, #f4f4f4);
   margin: 0;
+  line-height: 1.25;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
+.portfolio-section-subheading {
+  font-size: 1rem;
+  color: var(--cds-text-secondary, #c6c6c6);
+  margin-top: 0.75rem;
+  max-width: 65ch;
+  line-height: 1.5;
+}
+
+/* Glass Card & Carbon Tile enhancement */
+.carbon-card-interactive {
+  transition: transform var(--cds-motion-duration-moderate-01) cubic-bezier(0, 0, 0.38, 0.9),
+              box-shadow var(--cds-motion-duration-moderate-01) cubic-bezier(0, 0, 0.38, 0.9),
+              border-color var(--cds-motion-duration-moderate-01) ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.carbon-card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  border-color: var(--cds-border-interactive, #0f62fe);
+}
+
+/* Navigation overrides */
+.portfolio-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 8000;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(22, 22, 22, 0.92) !important;
+  border-bottom: 1px solid var(--cds-border-subtle, #393939);
+}
+
+.portfolio-nav-link-active {
+  color: var(--cds-link-primary, #78a9ff) !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid var(--cds-interactive, #0f62fe);
+}
+
+/* Custom scrollbar matching Carbon Dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cds-layer-01, #262626);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cds-layer-03, #525252);
   border-radius: 4px;
-  color: var(--text-h);
 }
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cds-interactive, #0f62fe);
 }

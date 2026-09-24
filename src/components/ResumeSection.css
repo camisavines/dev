@@ -1,0 +1,139 @@
+.resume-section {
+  background-color: var(--cds-layer-01, #262626);
+}
+
+.resume-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.resume-download-btn-wrap {
+  margin-bottom: 0.5rem;
+}
+
+.resume-block-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--cds-border-subtle, #393939);
+}
+
+.resume-block-icon {
+  color: var(--cds-link-primary, #78a9ff);
+}
+
+.resume-block-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cds-text-primary, #f4f4f4);
+  margin: 0;
+}
+
+.resume-exp-col {
+  margin-bottom: 3rem;
+}
+
+.resume-role-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--cds-text-primary, #f4f4f4);
+  margin-bottom: 0.25rem;
+}
+
+.resume-period-tag {
+  font-size: 0.8125rem;
+  color: var(--cds-text-secondary, #c6c6c6);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.resume-company-name {
+  font-weight: 600;
+  color: var(--cds-link-primary, #78a9ff);
+  font-size: 0.9375rem;
+}
+
+.resume-location-text {
+  font-size: 0.8125rem;
+  color: var(--cds-text-placeholder, #8d8d8d);
+}
+
+.resume-bullets-list {
+  margin: 0 0 0.75rem 1rem;
+  padding: 0;
+  color: var(--cds-text-secondary, #c6c6c6);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.resume-bullets-list li {
+  margin-bottom: 0.35rem;
+}
+
+.resume-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.accordion-body-content {
+  padding: 0.5rem 0;
+}
+
+.edu-period {
+  font-size: 0.8125rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--cds-link-primary, #78a9ff);
+  margin-bottom: 0.5rem;
+}
+
+.edu-details {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--cds-text-secondary, #c6c6c6);
+  margin: 0;
+}
+
+.certs-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cert-card-tile {
+  background-color: var(--cds-background, #161616);
+  border: 1px solid var(--cds-border-subtle, #393939);
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cert-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cert-title {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--cds-text-primary, #f4f4f4);
+}
+
+.cert-meta {
+  font-size: 0.8125rem;
+  color: var(--cds-text-secondary, #c6c6c6);
+}
+
+@media (max-width: 672px) {
+  .resume-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

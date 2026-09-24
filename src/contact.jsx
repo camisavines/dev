@@ -21,7 +21,7 @@ const card = (isDark) => ({
   fontFamily: appleFont,
 });
 
-const cardHeader = (isDark, accentColor) => ({
+const cardHeader = (isDark) => ({
   padding: "11px 16px 10px",
   background: isDark ? "rgba(44,44,46,0.6)" : "rgba(255,255,255,0.5)",
   borderBottom: isDark
